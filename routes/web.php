@@ -124,6 +124,12 @@ Route::get('/delete-public-file', function (Request $request) {
     return 'Deleted';
 });
 
+// server-side processing data tables
+Route::get('getEmployees', [EmployeeController::class, 'getData'])->name('employees.getData');
+
+// Route Export Excel
+Route::get('exportExcel', [EmployeeController::class, 'exportExcel'])->name('employees.exportExcel');
+
 // // Home Controller
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
 
